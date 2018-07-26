@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css?family=Reenie+Beanie");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#title {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 3em;
+}
+#title:hover {
+  text-shadow: 0 5px 20px #000;
+  transform: translate(0, -5px);
+  -webkit-transform: translate(0, -5px);
+  -moz-transform: translate(0, -5px);
+  -ms-transform: translate(0, -5px);
+  -o-transform: translate(0, -5px);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+
+.image {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  width: 80%;
+}
+
+.next {
+  position: absolute;
+  right: 10px;
+  top: calc(100% / 2);
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 3em;
+}
+.next:hover {
+  text-shadow: 0 5px 20px #000;
+  transform: translate(0, -5px);
+  -webkit-transform: translate(0, -5px);
+  -moz-transform: translate(0, -5px);
+  -ms-transform: translate(0, -5px);
+  -o-transform: translate(0, -5px);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+
+.prev {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 3em;
+}
+.prev:hover {
+  text-shadow: 0 5px 20px #000;
+  transform: translate(0, -5px);
+  -webkit-transform: translate(0, -5px);
+  -moz-transform: translate(0, -5px);
+  -ms-transform: translate(0, -5px);
+  -o-transform: translate(0, -5px);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 800px) {
+  #title {
+    font-size: 2em;
+  }
+
+  .next {
+    font-size: 2em;
+    bottom: 0;
+  }
+
+  .prev {
+    font-size: 2em;
+    top: 50%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
