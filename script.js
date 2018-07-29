@@ -62,6 +62,9 @@ let set3 = [
   `panorama/018.JPG`,
 ];
 
+let set4 = [];
+let set5 = [];
+
 // let classToTitle = {
 //   set1: `Jan - Mar 2011`,
 //   set2: `Ventspils in Pola`,
@@ -125,12 +128,12 @@ function activatePage(arr, titel) {
 function showArrows(evt) {
   let img = document.querySelector(`img`);
   let width = img.clientWidth;
-  let coordX = evt.offsetX || evt.originalEvent.layerX;
+  let coordX = evt.offsetX;
   if (coordX < width / 2) {
-    document.querySelector(`.image`).style.cursor = `url('img/arrows/arrowleft.png'), auto`;
+    img.style.cursor = `url('img/arrows/arrowleft.png'), auto`;
   }
   if (coordX > width / 2) {
-    document.querySelector(`.image`).style.cursor = `url('img/arrows/arrowright.png'), auto`;
+    img.style.cursor = `url('img/arrows/arrowright.png'), auto`;
   }
 }
 
@@ -138,7 +141,7 @@ function changePic(evt) {
   let target = evt.target;
   let img = document.querySelector(`img`);
   let width = img.clientWidth;
-  let coordX = evt.offsetX || evt.originalEvent.layerX;
+  let coordX = evt.offsetX;
   let count = container.querySelector(`.count`);
   if (coordX > width / 2 && target.classList.contains(`imgnav`)) {
     pic++;
@@ -158,7 +161,7 @@ function changePic(evt) {
     picCount--;
     if (pic < 0) {
       pic = photoSet.length - 1;
-      picCount = photoSet.length - 1;
+      picCount = photoSet.length;
       img.src = `img/` + photoSet[pic];
       count.textContent = ` // ` + photoSetName + ` // ` + picCount + ` of ` + photoSetCount;
     } else {
@@ -173,7 +176,6 @@ function goToGallery(evt) {
   if (target.className) {
     let gallery = target.className;
     let galleryTitle = target.textContent;
-    console.log(galleryTitle);
     activatePage(gallery, galleryTitle);
   }
 }
@@ -187,7 +189,8 @@ function chooseGallery() {
 
 function showMenu() {
   container.removeChild(title);
-  let element = document.querySelector(`template`).content.querySelector(`.menu`).cloneNode(true);
+  let template = document.querySelector(`template`);
+  let element = template.content.querySelector(`.menu`).cloneNode(true);
   container.appendChild(element);
   let menu = document.querySelector(`.icon`);
   menu.addEventListener(`click`, function () {
