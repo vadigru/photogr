@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Reenie+Beanie');
 
-@mixin text {
-  font-family: 'Reenie Beanie', cursive;
-  font-size: 3em;
-}
-
 @mixin hover {
   text-shadow: 0 5px 20px #000;
   transform: translate(0, -5px);
@@ -20,63 +15,378 @@
   -o-transition: all 0.5s ease-in-out;
 }
 
+// -----large size-------------------------------------------------------------
+
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Reenie Beanie', cursive;
+}
+
+#title {
+  font-size: 4em;
+  line-height: 100vh;
+  &:hover {
+    @include hover;
+  }
 }
 
 .container {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#title {
-  @include text;
-  &:hover {
-    @include hover;
+.menu {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  .menu_icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 1);
+
+    .icon {
+      display: none;
+      &:hover {
+        cursor: default;
+      }
+    }
+    .image_view {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 80px;
+      width: 100%;
+      height: 80vh;
+      .image {
+        width: 75%;
+        img {
+          width: 100%;
+          &.vinpola {
+            display: block;
+            margin: 0 auto;
+            width: 43%;
+          }
+        }
+      }
+    }
+    .count {
+      font-size: 1.5em;
+      margin-top: 10px;
+    }
+  }
+
+  .menu_left {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 2em;
+  }
+
+  .menu_left div {
+    text-align: left;
+    &:hover {
+      @include hover;
+    }
+  }
+
+  .menu_left_sml {
+    display: none;
   }
 }
 
-.image {
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  width: 80%;
-}
+// ----- from 1440px to 1201px--------------------------------------------------
 
-.next {
-  position: absolute;
-  right: 10px;
-  top: calc(100% / 2);
-  @include text;
-  &:hover {
-    @include hover;
+@media screen and (max-width: 1440px) and (min-width: 1201px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .menu_icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 1);
+
+      .icon {
+        display: none;
+        &:hover {
+          cursor: default;
+        }
+      }
+      .image_view {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+        width: 100%;
+        height: 80vh;
+        .image {
+          width: 90%;
+          img {
+            width: 100%;
+            &.vinpola {
+              display: block;
+              margin: 0 auto;
+              width: 50%;
+            }
+          }
+        }
+      }
+      .count {
+        font-size: 1.5em;
+        margin-top: 10px;
+      }
+    }
   }
 }
 
-.prev {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  @include text;
-  &:hover {
-    @include hover;
+// ----- from 1200px to 1025px--------------------------------------------------
+
+@media screen and (max-width: 1200px) and (min-width: 1025px) {
+  #title {
+    font-size: 3em;
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .menu_icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 1);
+
+      .icon {
+        display: none;
+        &:hover {
+          cursor: default;
+        }
+      }
+      .image_view {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+        width: 100%;
+        height: 80vh;
+        .image {
+          width: 90%;
+          img {
+            width: 100%;
+            &.vinpola {
+              display: block;
+              margin: 0 auto;
+              width: 55%;
+            }
+          }
+        }
+      }
+      .count {
+        font-size: 1.5em;
+        margin-top: 10px;
+      }
+    }
   }
 }
 
-@media screen and (max-width: 800px) {
+// ----- from 1024px to 769px--------------------------------------------------
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  #title {
+    font-size: 3em;
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .menu_icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 1);
+
+      .icon {
+        display: none;
+        &:hover {
+          cursor: default;
+        }
+      }
+      .image_view {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+        width: 100%;
+        height: 70vh;
+        .image {
+          width: 90%;
+          img {
+            width: 100%;
+            &.vinpola {
+              display: block;
+              margin: 0 auto;
+              width: 55%;
+            }
+          }
+        }
+      }
+      .count {
+        font-size: 1.5em;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+// ----- from 768px to 481px--------------------------------------------------
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  #title {
+    font-size: 3em;
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .menu_icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 1);
+
+      .icon {
+        display: none;
+        &:hover {
+          cursor: default;
+        }
+      }
+      .image_view {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+        width: 100%;
+        height: 80vh;
+        .image {
+          width: 90%;
+          img {
+            width: 100%;
+            &.vinpola {
+              display: block;
+              margin: 0 auto;
+              width: 100%;
+            }
+          }
+        }
+      }
+      .count {
+        font-size: 1.5em;
+        margin-top: 10px;
+      }
+    }
+    .menu_left {
+      position: absolute;
+      top: 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 2em;
+    }
+  }
+}
+
+// -----smaller than 480px--------------------------------------------------------
+
+@media screen and (max-width: 480px) {
   #title {
     font-size: 2em;
   }
-  .next {
-    font-size: 2em;
-    bottom: 0;
+  .menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .menu_icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 1);
+
+      .icon {
+        display: block;
+        font-size: 2em;
+        margin-top: 10px;
+          &:hover {
+          cursor: pointer;
+        }
+      }
+      .image_view {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+        width: 100%;
+        height: 70vh;
+        .image {
+          width: 90%;
+          img {
+            width: 100%;
+            &.vinpola {
+              display: block;
+              margin: 0 auto;
+              width: 100%;
+            }
+          }
+        }
+      }
+      .count {
+        font-size: 1.5em;
+        margin-top: 10px;
+      }
+    }
+    .menu_left {
+      display: none;
+    }
+    .menu_left_sml {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      font-size: 2em;
+      ;
+    }
+    .menu_left_sml div {
+      text-align: center;
+      &:hover {
+        @include hover;
+      }
+    }
+    .hidden {
+      display: none;
+    }
   }
 
-  .prev {
-    font-size: 2em;
-    top: 50%;
-  }
 }
