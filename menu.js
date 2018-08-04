@@ -22,44 +22,25 @@
     let frontSml = container.querySelector(`.menu_btn_sml_front`);
     let backSml = container.querySelector(`.menu_btn_sml_back`);
 
-
-    // btn.addEventListener(`click`, function (e) {
-    //   e.preventDefault();
-    //   menu.classList.toggle(`sample_menu_active`);
-    //   front.classList.toggle(`menu_btn_front_r`);
-    //   back.classList.toggle(`menu_btn_back_r`);
-    //   console.log(e.target);
-    //   if (e.target.textContent !== ``) {
-    //     menu.classList.toggle(`sample_menu_active`);
-    //   }
-    // });
-
-    btn.addEventListener(`click`, function (e) {
-      e.preventDefault();
+    function menuToggle() {
       menu.classList.toggle(`sample_menu_active`);
       front.classList.toggle(`menu_btn_front_r`);
       back.classList.toggle(`menu_btn_back_r`);
-    });
+    }
 
-    btnSml.addEventListener(`click`, function (e) {
-      e.preventDefault();
-      // menuSml.classList.remove(`hidden`);
+    function menuSmlToggle() {
       menuSml.classList.toggle(`sample_menu_sml_active`);
       frontSml.classList.toggle(`menu_btn_sml_front_r`);
       backSml.classList.toggle(`menu_btn_sml_back_r`);
-    });
+    }
 
-    menuSml.addEventListener(`click`, function (e) {
-      e.preventDefault();
-      menuSml.classList.toggle(`sample_menu_sml_active`);
-      frontSml.classList.toggle(`menu_btn_sml_front_r`);
-      backSml.classList.toggle(`menu_btn_sml_back_r`);
-    });
+    btn.addEventListener(`click`, menuToggle);
+    btnSml.addEventListener(`click`, menuSmlToggle);
+    menuSml.addEventListener(`click`, menuSmlToggle);
 
     window.chooseGallery();
   };
 
   title.addEventListener(`click`, showMenu);
-
 
 })();

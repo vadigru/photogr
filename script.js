@@ -1,7 +1,6 @@
 (function () {
 
   let container = document.querySelector(`.main_container`);
-  let title = container.querySelector(`#main_title`);
   let pic;
   let picCount;
   let photoSet;
@@ -11,10 +10,8 @@
   const THUMB_AREA = 50;
 
   function showPic(arr, titel, id) {
-    let menuSml = container.querySelector(`.sample_menu_sml`);
     let imageView = container.querySelector(`.sample_image`);
     let imageCount = container.querySelector(`.sample_count`);
-    // menuSml.classList.add(`hidden`);
     imageView.textContent = ``;
     let img = document.createElement(`img`);
     let div = document.createElement(`div`);
@@ -43,7 +40,6 @@
   }
 
   function showArrows(evt) {
-    let target = evt.target;
     let imageFlip = container.querySelector(`.image_flip`);
     let width = imageFlip.clientWidth;
     let halfWidth = width / 2;
@@ -90,10 +86,9 @@
     imageView.appendChild(thumbs);
 
 
-      let thumb = container.querySelectorAll(`.thumbnails img`);
+    let thumb = container.querySelectorAll(`.thumbnails img`);
     [].forEach.call(thumb, function (item) {
-      item.addEventListener(`mouseover`, function (evt) {
-        console.log(evt.target);
+      item.addEventListener(`mouseover`, function () {
         item.style.cursor = `url(img/arrows/arrowup.png), auto`;
       });
     });
