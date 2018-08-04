@@ -6,48 +6,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="flippingbutton.css">
   <link rel="icon" type="image/png" href="img/icon/lens.png">
 
   <title>in the name of photography</title>
 </head>
 
 <body>
-  <div class="container">
-    <div id="title">
+  <div class="main_container">
+    <div id="main_title">
       In the name of Photography
     </div>
   </div>
 
   <template>
-    <div class="menu">
+    <div class="sample">
 
-      <div class="menu_icon">
-        <div class="icon">Gallery select </div>
-        <div class="image_view"></div>
-        <div class="count"></div>
+      <div class="sample_container">
+          <div class="menu_wrapper">
+            <div class="menu_btn">
+              <div class="menu_btn_front"></div>
+              <div class="menu_btn_back"></div>
+            </div>
+            <div class="menu_btn_sml">
+                <div class="menu_btn_sml_front"></div>
+                <div class="menu_btn_sml_back"></div>
+              </div>
+          </div>
+        <div class="sample_icon">Gallery select</div>
+        <div class="sample_image"></div>
+        <div class="sample_count"></div>
       </div>
 
-      <div class="menu_left">
+      <div class="sample_menu">
         <div class="set1">Jan - Mar 2011</div>
         <div class="set2">Ventspils in Pola</div>
         <div class="set3">Life in Panorama</div>
-        <div class="set4">Gallery4</div>
-        <div class="set5">Gallery5</div>
+        <div class="set4">Limited Edition</div>
+        <div class="set5">Star Wars</div>
       </div>
 
-      <div class="menu_left_sml hidden">
+      <div class="sample_menu_sml">
         <div class="set1">Jan - Mar 2011</div>
         <div class="set2">Ventspils in Pola</div>
         <div class="set3">Life in Panorama</div>
-        <div class="set4">Gallery4</div>
-        <div class="set5">Gallery5</div>
+        <div class="set4">Limited Edition</div>
+        <div class="set5">Star Wars</div>
       </div>
-
-
     </div>
   </template>
 
   <script src="script.js"></script>
+  <script src="data.js"></script>
+  <script src="menu.js"></script>
 </body>
 
 </html>

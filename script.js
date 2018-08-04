@@ -1,203 +1,176 @@
-let set1 = [
-  `janmar/01.JPG`,
-  `janmar/02.JPG`,
-  `janmar/03.JPG`,
-  `janmar/04.JPG`,
-  `janmar/05.JPG`,
-  `janmar/06.JPG`,
-  `janmar/07.JPG`,
-  `janmar/08.JPG`,
-  `janmar/09.JPG`,
-  `janmar/010.JPG`,
-  `janmar/011.JPG`,
-  `janmar/012.JPG`,
-  `janmar/013.JPG`,
-  `janmar/014.JPG`,
-  `janmar/015.JPG`,
-  `janmar/016.JPG`,
-  `janmar/017.JPG`
-];
+(function () {
 
-let set2 = [
-  `ventpola/01-pola.jpg`,
-  `ventpola/02-pola.jpg`,
-  `ventpola/03-pola.jpg`,
-  `ventpola/04-pola.jpg`,
-  `ventpola/05-pola.jpg`,
-  `ventpola/06-pola.jpg`,
-  `ventpola/07-pola.jpg`,
-  `ventpola/08-pola.jpg`,
-  `ventpola/09-pola.jpg`,
-  `ventpola/010-pola.jpg`,
-  `ventpola/011-pola.jpg`,
-  `ventpola/012-pola.jpg`,
-  `ventpola/013-pola.jpg`,
-  `ventpola/014-pola.jpg`,
-  `ventpola/015-pola.jpg`,
-  `ventpola/016-pola.jpg`,
-  `ventpola/017-pola.jpg`,
-  `ventpola/018-pola.jpg`,
-  `ventpola/019-pola.jpg`,
-  `ventpola/020-pola.jpg`
-];
+  let container = document.querySelector(`.main_container`);
+  let title = container.querySelector(`#main_title`);
+  let pic;
+  let picCount;
+  let photoSet;
+  let photoSetName;
+  let photoSetCount;
+  let photoSetClass;
+  const THUMB_AREA = 50;
 
-let set3 = [
-  `panorama/01.JPG`,
-  `panorama/02.JPG`,
-  `panorama/03.JPG`,
-  `panorama/04.JPG`,
-  `panorama/05.JPG`,
-  `panorama/06.JPG`,
-  `panorama/07.JPG`,
-  `panorama/08.JPG`,
-  `panorama/09.JPG`,
-  `panorama/010.JPG`,
-  `panorama/011.JPG`,
-  `panorama/012.JPG`,
-  `panorama/013.JPG`,
-  `panorama/014.JPG`,
-  `panorama/015.JPG`,
-  `panorama/016.JPG`,
-  `panorama/017.JPG`,
-  `panorama/018.JPG`,
-];
-
-let set4 = [];
-let set5 = [];
-
-// let classToTitle = {
-//   set1: `Jan - Mar 2011`,
-//   set2: `Ventspils in Pola`,
-//   set3: `Life in Panorama`
-// };
-
-
-let container = document.querySelector(`.container`);
-let title = container.querySelector(`#title`);
-let pic = 0;
-let picCount = 1;
-let photoSet;
-let photoSetName;
-let photoSetCount;
-
-
-function activatePage(arr, titel) {
-  let menuLeftSml = document.querySelector(`.menu_left_sml`);
-  let imageView = container.querySelector(`.image_view`);
-  let count = container.querySelector(`.count`);
-  let div = document.createElement(`div`);
-  let img = document.createElement(`img`);
-  menuLeftSml.classList.add(`hidden`);
-  img.classList.add(`imgnav`);
-  imageView.textContent = ``;
-
-  function showPic(i, t) {
-    if (i === `set2`) {
-      img.classList.add(`vinpola`);
+  function showPic(arr, titel, id) {
+    let menuSml = container.querySelector(`.sample_menu_sml`);
+    let imageView = container.querySelector(`.sample_image`);
+    let imageCount = container.querySelector(`.sample_count`);
+    // menuSml.classList.add(`hidden`);
+    imageView.textContent = ``;
+    let img = document.createElement(`img`);
+    let div = document.createElement(`div`);
+    if (arr === `set2`) {
+      img.classList.add(`image_pola`);
     }
-    pic = 0;
-    picCount = 1;
-    photoSet = eval(i);
-    photoSetName = t;
+    if (arr === `set4`) {
+      img.classList.add(`image_limited`);
+    }
+    pic = parseInt(id, 10);
+    picCount = parseInt(id, 10) + 1;
+    photoSet = window.eval(arr);
+    photoSetName = titel;
     photoSetCount = photoSet.length;
+    photoSetClass = arr;
+    img.classList.add(`image_flip`);
     img.src = `img/` + photoSet[pic];
-    count.textContent = ` // ` + photoSetName + ` // ` + picCount + ` of ` + photoSet.length;
+    img.alt = photoSetName;
+    imageCount.textContent = ` // ` + `"` + photoSetName + `"` + ` // ` + picCount + ` of ` + photoSetCount;
+    div.appendChild(img);
+    div.classList.add(`image`);
+    container.querySelector(`.sample_image`).appendChild(div);
+    let imgs = container.querySelector(`img`);
+    imgs.addEventListener(`click`, changePic);
+    imgs.addEventListener(`mousemove`, showArrows);
   }
-  showPic(arr, titel);
-  // switch (arr) {
-  //   case `set1`:
-  //     showPic(arr, titel);
-  //     break;
-  //   case `set2`:
-  //     showPic(arr, titel);
-  //     break;
-  //   case `set3`:
-  //     showPic(arr, titel);
-  //     break;
-  // }
 
-  div.appendChild(img);
-  div.classList.add(`image`);
-  container.querySelector(`.image_view`).appendChild(div);
+  function showArrows(evt) {
+    let target = evt.target;
+    let imageFlip = container.querySelector(`.image_flip`);
+    let width = imageFlip.clientWidth;
+    let halfWidth = width / 2;
+    let coordX = evt.offsetX;
+    if (coordX < halfWidth - THUMB_AREA) {
+      imageFlip.style.cursor = `url('img/arrows/arrowleft.png'), auto`;
+    }
+    if (coordX <= width && coordX >= halfWidth + THUMB_AREA) {
+      imageFlip.style.cursor = `url('img/arrows/arrowright.png'), auto`;
+    }
 
-  title.removeEventListener(`click`, activatePage);
-  container.addEventListener(`click`, changePic);
-  container.addEventListener(`mousemove`, showArrows);
-}
-
-function showArrows(evt) {
-  let img = document.querySelector(`img`);
-  let width = img.clientWidth;
-  let coordX = evt.offsetX;
-  if (coordX < width / 2) {
-    img.style.cursor = `url('img/arrows/arrowleft.png'), auto`;
-  }
-  if (coordX > width / 2) {
-    img.style.cursor = `url('img/arrows/arrowright.png'), auto`;
-  }
-}
-
-function changePic(evt) {
-  let target = evt.target;
-  let img = document.querySelector(`img`);
-  let width = img.clientWidth;
-  let coordX = evt.offsetX;
-  let count = container.querySelector(`.count`);
-  if (coordX > width / 2 && target.classList.contains(`imgnav`)) {
-    pic++;
-    picCount++;
-    if (pic === photoSet.length) {
-      pic = 0;
-      picCount = 1;
-      img.src = `img/` + photoSet[pic];
-      count.textContent = ` // ` + photoSetName + ` // ` + picCount + ` of ` + photoSetCount;
-    } else {
-      img.src = `img/` + photoSet[pic];
-      count.textContent = ` // ` + photoSetName + ` // ` + picCount + ` of ` + photoSetCount;
+    if (coordX <= halfWidth + THUMB_AREA && coordX >= halfWidth - THUMB_AREA) {
+      imageFlip.style.cursor = `url('img/arrows/gallery.png'), auto`;
     }
   }
-  if (coordX < width / 2 && target.classList.contains(`imgnav`)) {
-    pic--;
-    picCount--;
-    if (pic < 0) {
-      pic = photoSet.length - 1;
-      picCount = photoSet.length;
-      img.src = `img/` + photoSet[pic];
-      count.textContent = ` // ` + photoSetName + ` // ` + picCount + ` of ` + photoSetCount;
+
+
+  function showThumbnails(arr) {
+    let imageView = container.querySelector(`.sample_image`);
+    let image = container.querySelector(`.image`);
+    let imageCount = container.querySelector(`.sample_count`);
+    imageView.removeEventListener(`click`, changePic);
+    imageView.removeEventListener(`mousemove`, showArrows);
+    imageView.removeChild(image);
+    if (photoSetCount === 1) {
+      imageCount.textContent = ` // ` + photoSetCount + ` image of ` + `"` + photoSetName + `"`;
     } else {
-      img.src = `img/` + photoSet[pic];
-      count.textContent = ` // ` + photoSetName + ` // ` + picCount + ` of ` + photoSetCount;
+      imageCount.textContent = ` // All ` + photoSetCount + ` images of ` + `"` + photoSetName + `"`;
+    }
+
+    let thumbs = document.createElement(`div`);
+    thumbs.classList.add(`thumbnails`);
+    arr.forEach(function (item, i) {
+      let thumb = document.createElement(`div`);
+      thumb.classList.add(`thumbnail`);
+      let img = document.createElement(`img`);
+      img.classList.add(photoSetClass);
+      img.src = `img/` + item;
+      img.alt = photoSetName;
+      img.id = i;
+      thumb.appendChild(img);
+      thumbs.appendChild(thumb);
+    });
+    imageView.appendChild(thumbs);
+
+
+      let thumb = container.querySelectorAll(`.thumbnails img`);
+    [].forEach.call(thumb, function (item) {
+      item.addEventListener(`mouseover`, function (evt) {
+        console.log(evt.target);
+        item.style.cursor = `url(img/arrows/arrowup.png), auto`;
+      });
+    });
+    let thumbnails = container.querySelector(`.thumbnails`);
+    thumbnails.addEventListener(`click`, selectPicture);
+  }
+
+  function changePic(evt) {
+    let target = evt.target;
+    let imageFlip = container.querySelector(`.image_flip`);
+    let width = imageFlip.clientWidth;
+    let halfWidth = width / 2;
+    let coordX = evt.offsetX;
+    let imageCount = container.querySelector(`.sample_count`);
+    let widthA = halfWidth + THUMB_AREA;
+    let widthB = halfWidth - THUMB_AREA;
+    if (coordX > widthA && target.classList.contains(`image_flip`)) {
+      pic++;
+      picCount++;
+      if (pic === photoSetCount) {
+        pic = 0;
+        picCount = 1;
+        imageFlip.src = `img/` + photoSet[pic];
+        imageCount.textContent = ` // ` + `"` + photoSetName + `"` + ` // ` + picCount + ` of ` + photoSetCount;
+      } else {
+        imageFlip.src = `img/` + photoSet[pic];
+        imageCount.textContent = ` // ` + `"` + photoSetName + `"` + ` // ` + picCount + ` of ` + photoSetCount;
+      }
+    } else if (coordX < widthB && target.classList.contains(`image_flip`)) {
+      pic--;
+      picCount--;
+      if (pic < 0) {
+        pic = photoSetCount - 1;
+        picCount = photoSetCount;
+        imageFlip.src = `img/` + photoSet[pic];
+        imageCount.textContent = ` // ` + `"` + photoSetName + `"` + ` // ` + picCount + ` of ` + photoSetCount;
+      } else {
+        imageFlip.src = `img/` + photoSet[pic];
+        imageCount.textContent = ` // ` + `"` + photoSetName + `"` + ` // ` + picCount + ` of ` + photoSetCount;
+      }
+    } else if (coordX !== widthA && coordX !== widthB && target.classList.contains(`image_flip`)) {
+      showThumbnails(photoSet);
     }
   }
-}
 
-function goToGallery(evt) {
-  let target = evt.target;
-  if (target.className) {
-    let gallery = target.className;
-    let galleryTitle = target.textContent;
-    activatePage(gallery, galleryTitle);
+  function renderPic(p, t, id) {
+    let imageView = container.querySelector(`.sample_image`);
+    imageView.removeChild(container.querySelector(`.thumbnails`));
+    showPic(p, t, id);
   }
-}
 
-function chooseGallery() {
-  let menuLeft = document.querySelector(`.menu_left`);
-  let menuLeftSml = document.querySelector(`.menu_left_sml`);
-  menuLeftSml.addEventListener(`click`, goToGallery);
-  menuLeft.addEventListener(`click`, goToGallery);
-}
+  function selectPicture(evt) {
+    let target = evt.target;
+    if (target.classList.contains(photoSetClass)) {
+      renderPic(target.className, target.alt, target.id);
+    }
+  }
 
-function showMenu() {
-  container.removeChild(title);
-  let template = document.querySelector(`template`);
-  let element = template.content.querySelector(`.menu`).cloneNode(true);
-  container.appendChild(element);
-  let menu = document.querySelector(`.icon`);
-  menu.addEventListener(`click`, function () {
-    let menuLeftSml = document.querySelector(`.menu_left_sml`);
-    menuLeftSml.classList.toggle(`hidden`);
-  });
-  chooseGallery();
-}
+  function goToGallery(evt) {
+    let target = evt.target;
+    if (target.className !== `` && target.textContent !== ``) {
+      let gallery = target.className;
+      let galleryTitle = target.textContent;
+      let id = 0;
+      showPic(gallery, galleryTitle, id);
+    }
+  }
 
-title.addEventListener(`click`, showMenu);
+  window.chooseGallery = () => {
+    let menu = container.querySelectorAll(`.sample_menu div`);
+    let menuSml = container.querySelectorAll(`.sample_menu_sml div`);
+    [].forEach.call(menu, function (item) {
+      item.addEventListener(`click`, goToGallery);
+    });
+    [].forEach.call(menuSml, function (item) {
+      item.addEventListener(`click`, goToGallery);
+    });
+  };
+
+})();

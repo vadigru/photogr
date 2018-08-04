@@ -1,0 +1,134 @@
+.menu_wrapper {
+  position: fixed;
+  z-index: 98;
+  top: 0;
+  left: 0;
+  height: 75px;
+  width: 75px;
+  background-color: #fff;
+}
+.menu_btn {
+  position: absolute;
+  z-index: 101;
+  top: 10px;
+  left: 10px;
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+}
+
+.menu_btn_sml {
+  display: none;
+}
+.menu_btn_front, .menu_btn_back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+  backface-visibility: hidden;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+.menu_btn_front {
+  background-size: cover;
+  background-color: #fff;
+  background-image: url(img/icon/lens_front.png);
+}
+.menu_btn_back {
+  background-size: cover;
+  background-color: #fff;
+  background-image: url(img/icon/lens_back.png);
+  transform: rotateY(180deg);
+}
+
+.menu_btn_front_r {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+}
+.menu_btn_back_r {
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+}
+
+@media screen and (max-width: 1024px) {
+  .menu_btn {
+    display: none;
+  }
+  .menu_btn_sml {
+    display: block;
+    position: absolute;
+    z-index: 101;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  .menu_wrapper {
+    height: 50px;
+    width: 50px;
+  }
+  .menu_btn_sml_front, .menu_btn_sml_back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    backface-visibility: hidden;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+  .menu_btn_sml_front {
+    background-size: cover;
+    background-color: #fff;
+    background-image: url(img/icon/lens_front.png);
+  }
+  .menu_btn_sml_back {
+    background-size: cover;
+    background-color: #fff;
+    background-image: url(img/icon/lens_back.png);
+    transform: rotateY(180deg);
+  }
+
+  .menu_btn_sml_front_r {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+  }
+  .menu_btn_sml_back_r {
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+  }
+}
+
+
