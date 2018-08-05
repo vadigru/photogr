@@ -38,7 +38,7 @@
     btnSml.addEventListener(`click`, menuSmlToggle);
     menuSml.addEventListener(`click`, menuSmlToggle);
 
-    window.chooseGallery();
+    window.gallery.chooseGallery();
   };
 
   title.addEventListener(`click`, showMenu);
