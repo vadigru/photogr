@@ -1,17 +1,22 @@
+:root {
+  --colorBg: rgba(255, 255, 255, 1);
+  --lensFront: url(../img/icon/lens_front.png);
+  --lensBack: url(../img/icon/lens_back.png);
+}
 .menu_wrapper {
   position: fixed;
   z-index: 98;
-  top: 0;
-  left: 0;
+  top: 10px;
+  left: -10px;
   height: 75px;
-  width: 75px;
-  background-color: #fff;
+  width: 100px;
+  background-color: var(--colorBg);
 }
 .menu_btn {
   position: absolute;
   z-index: 101;
-  top: 10px;
-  left: 10px;
+  top: 0;
+  left: 20px;
   width: 75px;
   height: 75px;
   cursor: pointer;
@@ -21,9 +26,9 @@
   display: none;
 }
 .menu_btn_front, .menu_btn_back {
-  position: absolute;
   width: 100%;
   height: 100%;
+  position: absolute;
   left: 0;
   top: 0;
   display: flex;
@@ -39,13 +44,13 @@
 }
 .menu_btn_front {
   background-size: cover;
-  background-color: #fff;
-  background-image: url(img/icon/lens_front.png);
+  background-color: var(--colorBg);
+  background-image: var(--lensFront);
 }
 .menu_btn_back {
   background-size: cover;
-  background-color: #fff;
-  background-image: url(img/icon/lens_back.png);
+  background-color: var(--colorBg);
+  background-image: var(--lensBack);
   transform: rotateY(180deg);
 }
 
@@ -72,32 +77,34 @@
     display: block;
     position: absolute;
     z-index: 101;
-    top: 10px;
-    left: 10px;
+    top: 0;
+    left: 0;
     width: 50px;
     height: 50px;
     cursor: pointer;
   }
   .menu_wrapper {
+    top: 10px;
+    left: 10px;
     height: 50px;
     width: 50px;
   }
   .menu_btn_sml_front, .menu_btn_sml_back {
-    position: absolute;
     width: 100%;
     height: 100%;
+    position: absolute;
     left: 0;
     top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 1s;
     backface-visibility: hidden;
     border-radius: 50px;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
+    transition: 1s;
     -webkit-transition: 1s;
     -moz-transition: 1s;
     -ms-transition: 1s;
@@ -105,13 +112,13 @@
 }
   .menu_btn_sml_front {
     background-size: cover;
-    background-color: #fff;
-    background-image: url(img/icon/lens_front.png);
+    background-color: var(--colorBg);
+    background-image: var(--lensFront);
   }
   .menu_btn_sml_back {
     background-size: cover;
-    background-color: #fff;
-    background-image: url(img/icon/lens_back.png);
+    background-color: var(--colorBg);
+    background-image: var(--lensBack);
     transform: rotateY(180deg);
   }
 
