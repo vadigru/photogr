@@ -90,5 +90,35 @@
     `starwars/sw05.jpg`,
     `starwars/sw06.jpg`
   ];
+  window.quote = [
+    {
+      quote: `It is more important to click with people than to click the shutter.`,
+      name: `Alfred Eisenstaedt`
+    },
+    {
+      quote: `The eye should learn to listen before it looks.`,
+      name: `Robert Frank`
+    },
+    {
+      quote: `Don’t shoot what it looks like. Shoot what it feels like.`,
+      name: `David Alan Harvey`
+    },
+    {
+      quote: `I walk, I look, I see, I stop, I photograph.`,
+      name: `Leon Levinstein`
+    },
+    {
+      quote: `Learn the rules like a pro, so you can break them like an artist.`,
+      name: `Pablo Picasso`
+    },
+    {
+      quote: `I am not interested in shooting new things – I am interested to see things new.`,
+      name: `Ernst Haas`
+    },
+    {
+      quote: `Art is not what you see, but what you make others see.`,
+      name: `Edgar Degas`
+    }
 
+  ];
 })();

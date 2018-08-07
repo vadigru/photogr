@@ -5,13 +5,13 @@
       let imageView = container.querySelector(`.sample_image`);
       let image = container.querySelector(`.image`);
       let imageCount = container.querySelector(`.sample_count`);
-      imageView.removeEventListener(`click`, window.pic.changePic);
+      imageView.removeEventListener(`click`, window.picture.changePic);
       imageView.removeEventListener(`mousemove`, window.showArrows);
       imageView.removeChild(image);
-      if (window.photoSetCount === 1) {
-        imageCount.textContent = ` // ` + window.photoSetCount + ` image of ` + `"` + window.photoSetName + `"`;
+      if (window.constant.photoSetCount === 1) {
+        imageCount.textContent = ` // ` + window.constant.photoSetCount + ` image of ` + `"` + window.constant.photoSetName + `"`;
       } else {
-        imageCount.textContent = ` // All ` + window.photoSetCount + ` images of ` + `"` + window.photoSetName + `"`;
+        imageCount.textContent = ` // All ` + window.constant.photoSetCount + ` images of ` + `"` + window.constant.photoSetName + `"`;
       }
 
       let thumbs = document.createElement(`div`);
@@ -20,9 +20,9 @@
         let thumb = document.createElement(`div`);
         thumb.classList.add(`thumbnail`);
         let img = document.createElement(`img`);
-        img.classList.add(window.photoSetClass);
+        img.classList.add(window.constant.photoSetClass);
         img.src = `img/` + item;
-        img.alt = window.photoSetName;
+        img.alt = window.constant.photoSetName;
         img.id = i;
         thumb.appendChild(img);
         thumbs.appendChild(thumb);
