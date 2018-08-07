@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Reenie+Beanie');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 @mixin hover {
   text-shadow: 0 5px 20px #000;
@@ -14,6 +15,7 @@
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
 }
+$colorTxt: #212121;
 $colorBg: rgba(255, 255, 255, 1);
 $colorMenu: rgba(255, 255, 255, 0.9);
 $colorShadow: rgba(204, 204, 204, 1);
@@ -30,6 +32,7 @@ $colorShadow: rgba(204, 204, 204, 1);
 html,
 body {
   background-color: $colorBg;
+  color: $colorTxt
 }
 
 #main_title {
@@ -42,11 +45,31 @@ body {
   }
 }
 
+
+
 .main_container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+.quote_container {
+  max-width: 2000px;
+  .quote {
+    margin: 0 auto;
+    font-size: 2em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    padding: 25px;
+  }
+  .quote_name {
+    font-size: 1.5em;
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    font-weight: 100;
+    padding: 0 25px;
+  }
 }
 
 .sample {

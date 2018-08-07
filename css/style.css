@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Reenie+Beanie");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +10,7 @@
 html,
 body {
   background-color: white;
+  color: #212121;
 }
 
 #main_title {
@@ -37,6 +39,24 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+.quote_container {
+  max-width: 2000px;
+}
+.quote_container .quote {
+  margin: 0 auto;
+  font-size: 2em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  padding: 25px;
+}
+.quote_container .quote_name {
+  font-size: 1.5em;
+  font-family: 'Raleway', sans-serif;
+  font-style: italic;
+  font-weight: 100;
+  padding: 0 25px;
 }
 
 .sample {
