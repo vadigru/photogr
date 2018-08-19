@@ -20,6 +20,7 @@
   ];
 
   window.set2 = [
+    `ventpola/021-pola.jpg`,
     `ventpola/020-pola.jpg`,
     `ventpola/019-pola.jpg`,
     `ventpola/018-pola.jpg`,
@@ -43,6 +44,7 @@
   ];
 
   window.set3 = [
+    `panorama/025.jpg`,
     `panorama/024.jpg`,
     `panorama/023.jpg`,
     `panorama/022.jpg`,

@@ -1,9 +1,8 @@
-@import url("https://fonts.googleapis.com/css?family=Reenie+Beanie");
-@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Nothing+You+Could+Do");
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Reenie Beanie', cursive;
+  font-family: 'Nothing You Could Do', cursive;
   font-weight: 600;
 }
 
@@ -14,7 +13,7 @@ body {
 }
 
 #main_title {
-  font-size: 4em;
+  font-size: 3em;
   width: 100%;
   text-align: center;
   line-height: 100vh;
@@ -46,13 +45,13 @@ body {
 }
 .quote_container .quote {
   margin: 0 auto;
-  font-size: 2em;
+  font-size: 1.5em;
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
   padding: 25px;
 }
 .quote_container .quote_name {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-family: 'Raleway', sans-serif;
   font-style: italic;
   font-weight: 100;
@@ -70,10 +69,10 @@ body {
   position: fixed;
   z-index: 97;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.9);
-  font-size: 2em;
+  font-size: 1.5em;
   transform: translate(-100%);
   -webkit-transform: translate(-100%);
   -moz-transform: translate(-100%);
@@ -85,12 +84,19 @@ body {
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
 }
+.sample .sample_menu > div {
+  margin-right: 0px;
+}
+.sample .sample_menu > div:before {
+  content: "> ";
+  font-style: italic;
+}
 .sample .sample_menu_active {
-  transform: translate(7%);
-  -webkit-transform: translate(7%);
-  -moz-transform: translate(7%);
-  -ms-transform: translate(7%);
-  -o-transform: translate(7%);
+  transform: translate(90px);
+  -webkit-transform: translate(90px);
+  -moz-transform: translate(90px);
+  -ms-transform: translate(90px);
+  -o-transform: translate(90px);
 }
 .sample .sample_menu div {
   text-align: center;
@@ -179,13 +185,22 @@ body {
   width: 55%;
 }
 .sample .sample_container .sample_count {
-  font-size: 1.5em;
+  font-size: 1.2em;
   padding-bottom: 50px;
 }
 
+@media screen and (max-width: 1280px) {
+  .sample .sample_menu > div {
+    margin-right: 10px;
+  }
+  .sample .sample_menu > div:before {
+    content: "> ";
+    font-style: italic;
+  }
+}
 @media screen and (max-width: 1024px) {
   #main_title {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   .sample .sample_menu {
@@ -201,7 +216,7 @@ body {
     justify-content: flex-start;
     transition: all 0.5s ease-in-out;
     background-color: rgba(255, 255, 255, 0.9);
-    font-size: 2em;
+    font-size: 1.5em;
     transform: translateY(-100%);
     -webkit-transform: translateY(-100%);
     -moz-transform: translateY(-100%);
@@ -248,7 +263,7 @@ body {
     margin-top: 0;
   }
   .sample .sample_count {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 }
 @media screen and (max-width: 1024px) and (orientation: landscape) {
@@ -290,7 +305,7 @@ body {
 }
 @media screen and (max-width: 600px) and (orientation: landscape) {
   #main_title {
-    font-size: 2em;
+    font-size: 1em;
   }
 
   .sample .sample_container .sample_image .image {
@@ -305,7 +320,7 @@ body {
     width: 90%;
   }
   .sample .sample_count {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 }
 @media screen and (min-width: 1921px) {
@@ -314,7 +329,7 @@ body {
   }
 
   .sample .sample_menu {
-    font-size: 3em;
+    font-size: 1.5em;
   }
   .sample .sample_container .sample_image .image {
     max-width: 1920px;
@@ -323,7 +338,7 @@ body {
     width: 70%;
   }
   .sample .sample_container .sample_count {
-    font-size: 2.5em;
+    font-size: 2em;
   }
 }
 

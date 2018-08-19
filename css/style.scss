@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Reenie+Beanie');
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do');
+
 
 @mixin hover {
   text-shadow: 0 5px 20px #000;
@@ -25,7 +25,7 @@ $colorShadow: rgba(204, 204, 204, 1);
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Reenie Beanie', cursive;
+  font-family: 'Nothing You Could Do', cursive;
   font-weight: 600;
 }
 
@@ -36,7 +36,7 @@ body {
 }
 
 #main_title {
-  font-size: 4em;
+  font-size: 3em;
   width: 100%;
   text-align: center;
   line-height: 100vh;
@@ -44,8 +44,6 @@ body {
     @include hover;
   }
 }
-
-
 
 .main_container {
   display: flex;
@@ -58,13 +56,13 @@ body {
   max-width: 2000px;
   .quote {
     margin: 0 auto;
-    font-size: 2em;
+    font-size: 1.5em;
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
     padding: 25px;
   }
   .quote_name {
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-family: 'Raleway', sans-serif;
     font-style: italic;
     font-weight: 100;
@@ -82,10 +80,10 @@ body {
     position: fixed;
     z-index: 97;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     background-color: $colorMenu;
-    font-size: 2em;
+    font-size: 1.5em;
     transform: translate(-100%);
     -webkit-transform: translate(-100%);
     -moz-transform: translate(-100%);
@@ -96,13 +94,20 @@ body {
     -moz-transition: all 0.5s ease-in-out;
     -ms-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
+    &>div {
+      margin-right: 0px;
+      &:before {
+        content: "> ";
+        font-style: italic;
+      }
+    }
 }
   .sample_menu_active {
-    transform: translate(7%);
-    -webkit-transform: translate(7%);
-    -moz-transform: translate(7%);
-    -ms-transform: translate(7%);
-    -o-transform: translate(7%);
+    transform: translate(90px);
+    -webkit-transform: translate(90px);
+    -moz-transform: translate(90px);
+    -ms-transform: translate(90px);
+    -o-transform: translate(90px);
 }
   .sample_menu div {
     text-align: center;
@@ -179,17 +184,30 @@ body {
       }
     }
     .sample_count {
-      font-size: 1.5em;
+      font-size: 1.2em;
       padding-bottom: 50px;
     }
   }
 }
 
+@media screen and (max-width: 1280px) {
+  .sample {
+    .sample_menu {
+      &>div {
+        margin-right: 10px;
+        &:before {
+          content: "> ";
+          font-style: italic;
+        }
+      }
+    }
+  }
+}
 // ----- 1024px and smaller ---------------------------------------------------
 
 @media screen and (max-width: 1024px) {
   #main_title {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   .sample {
@@ -206,7 +224,7 @@ body {
       justify-content: flex-start;
       transition: all 0.5s ease-in-out;
       background-color: $colorMenu;
-      font-size: 2em;
+      font-size: 1.5em;
       transform: translateY(-100%);
       -webkit-transform: translateY(-100%);
       -moz-transform: translateY(-100%);
@@ -246,7 +264,7 @@ body {
       }
     }
     .sample_count {
-      font-size: 2em;
+      font-size: 1.5em;
     }
   }
 }
@@ -306,7 +324,7 @@ body {
 
 @media screen and (max-width: 600px) and (orientation: landscape) {
   #main_title {
-    font-size: 2em;
+    font-size: 1em;
   }
 
   .sample {
@@ -328,7 +346,7 @@ body {
       }
     }
     .sample_count {
-      font-size: 1.5em;
+      font-size: 1.2em;
     }
   }
 }
@@ -342,7 +360,7 @@ body {
 
   .sample {
     .sample_menu {
-      font-size: 3em;
+      font-size: 1.5em;
     }
     .sample_container {
       .sample_image {
@@ -356,7 +374,7 @@ body {
         }
       }
       .sample_count {
-        font-size: 2.5em;
+        font-size: 2em;
       }
     }
   }
