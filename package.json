@@ -1,0 +1,28 @@
+{
+  "name": "photogr",
+  "version": "1.0.0",
+  "description": "In the name of photography",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vadigru/photogr.git"
+  },
+  "keywords": [
+    "photo"
+  ],
+  "author": "Vadim Grunenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vadigru/photogr/issues"
+  },
+  "homepage": "https://github.com/vadigru/photogr#readme",
+  "dependencies": {
+    "eslint-config-htmlacademy": "^0.5.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.1.0"
+  }
+}

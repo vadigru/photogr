@@ -4,8 +4,7 @@
   let min = window.quote.length - window.quote.length;
   let max = window.quote.length - 1;
   let getRandomQuote = () => {
-    let quoteNum = Math.floor(Math.random() * (max - min)) + min;
-    return quoteNum;
+    return Math.floor(Math.random() * (max - min)) + min;
   };
   let showMenu = () => {
     let template = document.querySelector(`template`);
