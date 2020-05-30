@@ -1,23 +1,23 @@
 (function () {
-  // window.set1 = [
-  //   `janmar/017.jpg`,
-  //   `janmar/016.jpg`,
-  //   `janmar/015.jpg`,
-  //   `janmar/014.jpg`,
-  //   `janmar/013.jpg`,
-  //   `janmar/012.jpg`,
-  //   `janmar/011.jpg`,
-  //   `janmar/010.jpg`,
-  //   `janmar/09.jpg`,
-  //   `janmar/08.jpg`,
-  //   `janmar/07.jpg`,
-  //   `janmar/06.jpg`,
-  //   `janmar/05.jpg`,
-  //   `janmar/04.jpg`,
-  //   `janmar/03.jpg`,
-  //   `janmar/02.jpg`,
-  //   `janmar/01.jpg`
-  // ];
+  window.set1 = [
+    `janmar/017.jpg`,
+    `janmar/016.jpg`,
+    `janmar/015.jpg`,
+    `janmar/014.jpg`,
+    `janmar/013.jpg`,
+    `janmar/012.jpg`,
+    `janmar/011.jpg`,
+    `janmar/010.jpg`,
+    `janmar/09.jpg`,
+    `janmar/08.jpg`,
+    `janmar/07.jpg`,
+    `janmar/06.jpg`,
+    `janmar/05.jpg`,
+    `janmar/04.jpg`,
+    `janmar/03.jpg`,
+    `janmar/02.jpg`,
+    `janmar/01.jpg`
+  ];
 
   window.set2 = [
     `ventpola/021-pola.jpg`,
